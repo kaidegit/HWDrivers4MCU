@@ -54,7 +54,7 @@ inline void SCL_Reset() {
  * @brief delay microsecond
  * 
  */
-inline void Delay_us(us){
+inline void Delay_us(uint32_t us){
     #error write the microsecond delay here
 }
 

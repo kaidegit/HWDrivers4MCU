@@ -61,7 +61,7 @@ inline void WriteDHT11Pin_Set() {
 /**
  * @brief delay millisecond
  */
-inline void Delay_ms(ms){
+inline void Delay_ms(uint32_t ms){
 #error write the millisecond delay here
     //    for STM32 HAL Lib
 //    HAL_Delay(ms);
@@ -70,7 +70,7 @@ inline void Delay_ms(ms){
 /**
  * @brief delay microsecond
  */
-inline void Delay_us(us){
+inline void Delay_us(uint32_t us){
 #error write the microsecond delay here
 //    HAL_delay_us(us);
 }
