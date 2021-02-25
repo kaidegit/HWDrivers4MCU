@@ -4,7 +4,7 @@
 #include "stdint.h"
 
 /// the i2c address of the oled
-const OLED_ADDR = 0x78;
+#define OLED_ADDR 0x78
 
 /**
  * @brief Construct a new oled send object
@@ -12,7 +12,7 @@ const OLED_ADDR = 0x78;
  * @param dc the control command or the data order
  * @param data 
  */
-inline oled_send(uint8_t dc, uint8_t data){
+inline void oled_send(uint8_t dc, uint8_t data){
 	#error Write the i2c send function here. 
 	// for STM32 HAL Lib
 	// HAL_I2C_Mem_Write(&hi2c1, OLED_ADDR, dc, I2C_MEMADD_SIZE_8BIT, data, 1, 0x100);
