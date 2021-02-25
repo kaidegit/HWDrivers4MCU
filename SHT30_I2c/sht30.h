@@ -3,9 +3,9 @@
 
 #include "main.h"
 
-const int SHT30_ADDR = 0x44;
-const int SHT30_ADDR_WRITE = SHT30_ADDR << 1;
-const int SHT30_ADDR_READ = SHT30_ADDR << 1 + 1;
+static const int SHT30_ADDR = 0x44;
+static const int SHT30_ADDR_WRITE = SHT30_ADDR << 1;
+static const int SHT30_ADDR_READ = SHT30_ADDR << 1 + 1;
 
 typedef enum {
     /* 软件复位命令 */
