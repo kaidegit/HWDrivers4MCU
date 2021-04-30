@@ -1,6 +1,40 @@
 #include "soft_i2c.h"
 #include "delay.h"
 
+void SDA_Set() {
+    #error write the setting SDA Pin function here
+    // for STM32 HAL Lib
+    // HAL_GPIO_WritePin(SDA_GPIO_Port, SDA_Pin, GPIO_PIN_SET);
+}
+
+void SDA_Reset() {
+    #error write the resetting SDA Pin function here
+    // for STM32 HAL Lib
+    // HAL_GPIO_WritePin(SDA_GPIO_Port, SDA_Pin, GPIO_PIN_RESET);
+}
+
+void SCL_Set() {
+    #error write the setting SCL Pin function here
+    // for STM32 HAL Lib
+    // HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_SET);
+}
+
+void SCL_Reset() {
+    #error write the resetting SCL Pin function here
+    // for STM32 HAL Lib
+    // HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_RESET);
+}
+
+void Delay_us(uint32_t us){
+    #error write the microsecond delay here
+}
+
+bool ReadSDAState(){
+    #error write the read pin function here and return if the SDA Pin is set
+    // for STM32 HAL Lib
+    // return HAL_GPIO_ReadPin(SDA_GPIO_Port, SDA_Pin) == GPIO_PIN_SET;
+}
+
 void Soft_I2c_Start() {
     SDA_Set();
     SCL_Set();

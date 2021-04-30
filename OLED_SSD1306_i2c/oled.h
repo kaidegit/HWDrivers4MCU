@@ -12,11 +12,7 @@
  * @param dc the control command or the data order
  * @param data 
  */
-inline void oled_send(uint8_t dc, uint8_t data){
-	#error Write the i2c send function here. 
-	// for STM32 HAL Lib
-	// HAL_I2C_Mem_Write(&hi2c1, OLED_ADDR, dc, I2C_MEMADD_SIZE_8BIT, data, 1, 0x100);
-}
+void oled_send(uint8_t dc, uint8_t data);
 
 /**
  * @brief write the control cammand to the oled
@@ -79,6 +75,8 @@ void OLED_ShowChar(uint8_t x,uint8_t y,uint8_t chr,uint8_t Char_Size);
  * @param Char_Size the size of the character. Should be 16 or 12.
  */
 void OLED_ShowString(uint8_t x,uint8_t y,uint8_t *chr,uint8_t Char_Size);
+
+void OLED_ShowNum(uint8_t x, uint8_t y, int32_t num, uint8_t Char_Size);
 
 /**
  * @brief display a Chinese character at the place on the OLED.

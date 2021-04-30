@@ -3,6 +3,12 @@
 
 uint8_t **Hzk;
 
+void oled_send(uint8_t dc, uint8_t data){
+	#error Write the i2c send function here. 
+	// for STM32 HAL Lib
+	// HAL_I2C_Mem_Write(&hi2c1, OLED_ADDR, dc, I2C_MEMADD_SIZE_8BIT, data, 1, 0x100);
+}
+
 /// OLED init commands 
 uint8_t CMD_Data[] = {
         0xAE, 0x00, 0x10, 0x40, 0xB0, 0x81, 0xFF, 0xA1, 0xA6, 0xA8, 0x3F,
@@ -103,6 +109,34 @@ void OLED_ShowString(uint8_t x, uint8_t y, uint8_t *chr, uint8_t Char_Size) {
         }
         j++;
     }
+}
+
+void OLED_ShowNum(uint8_t x, uint8_t y, int32_t num, uint8_t Char_Size) {
+    uint32_t j = 1;
+    if (num < 0){
+        OLED_ShowChar(x, y, '-', Char_Size);
+        x += 8;
+        if (x > 120) {
+            x = 0;
+            y += 2;
+        } 
+        num = -num;
+    }
+    while (j <= num) {
+        j *= 10;
+    }
+    j /= 10;
+    while (j > 1) {
+        OLED_ShowChar(x, y, num / j + '0', Char_Size);
+        x += 8;
+        if (x > 120) {
+            x = 0;
+            y += 2;
+        } 
+        num %= j;
+        j /= 10;
+    }
+    OLED_ShowChar(x, y, num + '0', Char_Size);
 }
 
 void OLED_ShowCHinese(uint8_t x, uint8_t y, uint8_t no) {

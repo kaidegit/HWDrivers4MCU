@@ -14,49 +14,31 @@
  * @brief Set the SDA Pin.
  * 
  */
-inline void SDA_Set() {
-    #error write the setting SDA Pin function here
-    // for STM32 HAL Lib
-    // HAL_GPIO_WritePin(SDA_GPIO_Port, SDA_Pin, GPIO_PIN_SET);
-}
+void SDA_Set();
 
 /**
  * @brief Reset the SDA Pin
  * 
  */
-inline void SDA_Reset() {
-    #error write the resetting SDA Pin function here
-    // for STM32 HAL Lib
-    // HAL_GPIO_WritePin(SDA_GPIO_Port, SDA_Pin, GPIO_PIN_RESET);
-}
+void SDA_Reset();
 
 /**
  * @brief Set the SCL Pin
  * 
  */
-inline void SCL_Set() {
-    #error write the setting SCL Pin function here
-    // for STM32 HAL Lib
-    // HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_SET);
-}
+void SCL_Set();
 
 /**
  * @brief Reset the SCL Pin
  * 
  */
-inline void SCL_Reset() {
-    #error write the resetting SCL Pin function here
-    // for STM32 HAL Lib
-    // HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, GPIO_PIN_RESET);
-}
+void SCL_Reset();
 
 /**
  * @brief delay microsecond
  * 
  */
-inline void Delay_us(uint32_t us){
-    #error write the microsecond delay here
-}
+void Delay_us(uint32_t us);
 
 /**
  * @brief read the state of the SDA Pin
@@ -65,11 +47,7 @@ inline void Delay_us(uint32_t us){
  * @return true if the SDA Pin is Set
  * @return false if the SDA Pin is Reset
  */
-inline bool ReadSDAState(){
-    #error write the read pin function here and return if the SDA Pin is set
-    // for STM32 HAL Lib
-    // return HAL_GPIO_ReadPin(SDA_GPIO_Port, SDA_Pin) == GPIO_PIN_SET;
-}
+bool ReadSDAState();
 
 /**
  * @brief start the i2c communication
