@@ -83,6 +83,6 @@ bool Soft_I2c_WaitAck();
  * @param cmd the first data
  * @param dat the second data
  */
-void Soft_I2c_Send(uint8_t DevAddr, uint8_t cmd, uint8_t dat);
+void Soft_I2c_Send(uint8_t DevAddr, uint8_t *cmd, uint8_t len);
 
 #endif

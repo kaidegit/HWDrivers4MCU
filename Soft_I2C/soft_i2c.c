@@ -87,16 +87,15 @@ bool Soft_I2c_WaitAck() {
     return re;
 }
 
-void Soft_I2c_Send(uint8_t DevAddr, uint8_t cmd, uint8_t dat) {
+void Soft_I2c_Send(uint8_t DevAddr, uint8_t *cmd, uint8_t len) {
     Soft_I2c_Start();
     Soft_I2c_SendByte(DevAddr);
     if (Soft_I2c_WaitAck())
         return;
-    Soft_I2c_SendByte(cmd);
-    if (Soft_I2c_WaitAck())
-        return;
-    Soft_I2c_SendByte(dat);
-    if (Soft_I2c_WaitAck())
-        return;
+    for (uint8_t i = 0;i<len;i++){
+        Soft_I2c_SendByte(cmd[i]);
+        if (Soft_I2c_WaitAck())
+            return;
+    }
     Soft_I2c_Stop();
 }
