@@ -5,10 +5,10 @@
 #include "stdbool.h"
 
 /// define the pins of i2c
-#define SDA_GPIO_Port 
-#define SDA_Pin
-#define SCL_GPIO_Port
-#define SCL_Pin
+//#define SDA_GPIO_Port 
+//#define SDA_Pin
+//#define SCL_GPIO_Port
+//#define SCL_Pin
 
 /**
  * @brief Set the SDA Pin.
